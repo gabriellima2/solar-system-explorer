@@ -1,5 +1,5 @@
-import { Text } from "react-native";
+import { Text } from "native-base";
 
 export const Favorites = () => {
-	return <Text>Favorites</Text>;
+	return <Text fontFamily="body">Favorites</Text>;
 };

@@ -1,5 +1,5 @@
-import { Text } from "react-native";
+import { Text } from "native-base";
 
 export const Welcome = () => {
-	return <Text>Welcome</Text>;
+	return <Text fontFamily="body">Welcome</Text>;
 };
