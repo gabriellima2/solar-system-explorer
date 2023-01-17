@@ -1,9 +1,6 @@
 import "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
 import { NativeBaseProvider } from "native-base";
-
-import { Routes } from "./src/routes";
-import { theme } from "./src/styles/theme";
 import {
 	useFonts,
 	Inter_200ExtraLight,
@@ -13,6 +10,11 @@ import {
 	Inter_600SemiBold,
 	Inter_700Bold,
 } from "@expo-google-fonts/inter";
+
+import { Loading } from "./src/components/Loading";
+import { Routes } from "./src/routes";
+
+import { theme } from "./src/styles/theme";
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
@@ -24,12 +26,16 @@ export default function App() {
 		InterBold: Inter_700Bold,
 	});
 
-	if (!fontsLoaded) null;
-
 	return (
 		<NativeBaseProvider theme={theme}>
-			<StatusBar style="auto" />
-			<Routes />
+			{!fontsLoaded ? (
+				<Loading />
+			) : (
+				<>
+					<StatusBar style="auto" />
+					<Routes />
+				</>
+			)}
 		</NativeBaseProvider>
 	);
 }
