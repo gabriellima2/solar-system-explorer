@@ -11,10 +11,9 @@ import {
 	Inter_700Bold,
 } from "@expo-google-fonts/inter";
 
-import { Loading } from "./src/components/Loading";
+import { Loading } from "@components/Loading";
 import { Routes } from "./src/routes";
-
-import { theme } from "./src/styles/theme";
+import { theme } from "@styles/theme";
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
