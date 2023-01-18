@@ -7,6 +7,8 @@
 			"@screens/*": ["./src/screens/*"],
       "@styles/*": ["./src/styles/*"],
       "@hooks/*": ["./src/hooks/*"],
+			"@global-types/*": ["./src/@types/*"],
+			"@layouts/*": ["./src/layouts/*"],
     },
 	},
   "extends": "expo/tsconfig.base"
