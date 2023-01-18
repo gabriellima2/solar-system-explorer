@@ -31,7 +31,7 @@ export default function App() {
 				<Loading />
 			) : (
 				<>
-					<StatusBar style="auto" />
+					<StatusBar style="light" />
 					<Routes />
 				</>
 			)}
