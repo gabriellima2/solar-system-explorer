@@ -1,6 +1,12 @@
 <h1 align="center">
-    Solar System Explorer (Projeto em desenvolvimento!)
+    <img alt="Solar System Explorer logo" src="./public/docs/logo.png" />
+    <br>
+    Solar System Explorer. Explore os principais planetas do Sistema Solar (Em Desenvolvimento)
 </h1>
+
+<div align="center">
+  <img src="./public/docs/figma.png" alt="demonstração do projeto" >
+</div>
 
 # Rodando o projeto
 
