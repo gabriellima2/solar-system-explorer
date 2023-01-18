@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Solar System Explorer logo" src="./public/docs/logo.png" />
+    <img alt="Solar System Explorer logo" src="./public/docs/logo.svg" />
     <br>
     Solar System Explorer. Explore os principais planetas do Sistema Solar (Em Desenvolvimento)
 </h1>
