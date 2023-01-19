@@ -36,7 +36,7 @@ export function setTabContent(
 				<Icon
 					name={icon.name}
 					size={icon.size || 36}
-					color={focused ? colors.primary[200] : colors.dark[800]}
+					color={focused ? colors.primary[200] : colors.dark[600]}
 				/>
 			</Flex>
 		),
