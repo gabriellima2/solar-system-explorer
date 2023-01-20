@@ -24,14 +24,10 @@ export const Welcome = () => {
 					pr={["12px", "12px", "16px"]}
 				>
 					<Box>
-						<Text.Heading
-							fontSize={["2xl", "2xl", "3xl"]}
-							w={[200, 200, 210]}
-							mb="8px"
-						>
+						<Text.Heading fontSize={["2xl", "3xl"]} w={[200, 200]} mb="8px">
 							Explore o Sistema Solar
 						</Text.Heading>
-						<Text.Body fontSize={["sm", "sm", "md"]} w={[260, 280]}>
+						<Text.Body fontSize={["sm", "md"]} w={[260, 290]}>
 							Aprenda sobre os principais planetas do Sistema Solar
 						</Text.Body>
 					</Box>
