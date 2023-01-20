@@ -1,5 +1,10 @@
+import { Default } from "@layouts/Default";
 import { Text } from "native-base";
 
 export const Explore = () => {
-	return <Text fontFamily="body">Explore</Text>;
+	return (
+		<Default>
+			<Text fontFamily="body">Explore</Text>
+		</Default>
+	);
 };
