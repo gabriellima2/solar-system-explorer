@@ -1,5 +1,5 @@
 import type { BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
-import { Box, Flex, useTheme } from "native-base";
+import { Flex, useTheme } from "native-base";
 import { Icon } from "@components/Icon";
 
 type SetTabContentParams = {
@@ -23,16 +23,6 @@ export function setTabContent(
 				justifyContent="center"
 				position="relative"
 			>
-				{focused && (
-					<Box
-						backgroundColor={colors.primary[200]}
-						w="full"
-						h="4px"
-						rounded="full"
-						position="absolute"
-						top="0"
-					/>
-				)}
 				<Icon
 					name={icon.name}
 					size={icon.size || 36}

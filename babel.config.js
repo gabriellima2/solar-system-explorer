@@ -20,6 +20,7 @@ module.exports = function(api) {
 						"@hooks": "./src/hooks",
 						"@global-types": "./src/@types",
 						"@layouts": "./src/layouts",
+						"@utils": "./src/utils",
 					}
 				}
 			]

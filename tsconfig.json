@@ -9,6 +9,7 @@
       "@hooks/*": ["./src/hooks/*"],
 			"@global-types/*": ["./src/@types/*"],
 			"@layouts/*": ["./src/layouts/*"],
+			"@utils/*": ["./src/utils/*"],
     },
 	},
   "extends": "expo/tsconfig.base"
