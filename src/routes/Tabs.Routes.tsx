@@ -9,6 +9,7 @@ import { Favorites } from "@screens/Favorites";
 
 import { windowDimensions } from "@utils/window-dimensions";
 import { setTabContent } from "./utils/set-tab-content";
+import { Logo } from "@components/Logo";
 
 const BOTTOM_TAB_HEIGHT = 62;
 const INDICATOR_WIDTH = 66;
@@ -64,7 +65,7 @@ export const Tabs = () => {
 					component={Explore}
 					options={{
 						...setTabContent({ icon: { name: "md-planet-outline" } }),
-						title: "Explorar",
+						headerTitle: () => <Logo />,
 					}}
 					listeners={{ focus: () => handleFocus({ currentIndex: 0 }) }}
 				/>
