@@ -1,0 +1,50 @@
+[
+	{
+		"name_english": "mercury",
+		"name_portuguese": "mercúrio",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+		"image_url": "https://raw.githubusercontent.com/gabriellima2/solar-system-explorer/dev/public/planets/mercury.png"
+	},
+	{
+		"name_english": "venus",
+		"name_portuguese": "vênus",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+		"image_url": "https://raw.githubusercontent.com/gabriellima2/solar-system-explorer/dev/public/planets/venus.png"
+	},
+	{
+		"name_english": "earth",
+		"name_portuguese": "terra",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+		"image_url": "https://raw.githubusercontent.com/gabriellima2/solar-system-explorer/dev/public/planets/earth.png"
+	},
+	{
+		"name_english": "mars",
+		"name_portuguese": "marte",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+		"image_url": "https://raw.githubusercontent.com/gabriellima2/solar-system-explorer/dev/public/planets/mars.png"
+	},
+	{
+		"name_english": "jupiter",
+		"name_portuguese": "júpiter",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+		"image_url": "https://raw.githubusercontent.com/gabriellima2/solar-system-explorer/dev/public/planets/jupiter.png"
+	},
+	{
+		"name_english": "saturn",
+		"name_portuguese": "saturno",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+		"image_url": "https://raw.githubusercontent.com/gabriellima2/solar-system-explorer/dev/public/planets/saturn.png"
+	},
+	{
+		"name_english": "uranus",
+		"name_portuguese": "urano",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+		"image_url": "https://raw.githubusercontent.com/gabriellima2/solar-system-explorer/dev/public/planets/uranus.png"
+	},
+	{
+		"name_english": "neptune",
+		"name_portuguese": "netuno",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+		"image_url": "https://raw.githubusercontent.com/gabriellima2/solar-system-explorer/dev/public/planets/neptune.png"
+	}
+]
