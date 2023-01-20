@@ -32,6 +32,7 @@ export const ControlButtonList = <Item extends {}>(
 			data={rest.data}
 			keyExtractor={rest.keyExtractor}
 			renderItem={renderItem}
+			horizontal
 		/>
 	);
 };

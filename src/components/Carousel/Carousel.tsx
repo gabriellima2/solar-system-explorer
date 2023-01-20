@@ -7,17 +7,18 @@ type CarouselProps<CarouselItem extends {}> = Omit<
 	"horizontal" | "pagingEnabled" | "ref" | "onViewableItemsChanged"
 > & {
 	ControlButton?: (props: ControlButtonProps<CarouselItem>) => JSX.Element;
+	ContainerProps?: Parameters<typeof Flex>[0];
 };
 
 export const Carousel = <CarouselItem extends {}>(
 	props: CarouselProps<CarouselItem>
 ) => {
-	const { ControlButton, ...rest } = props;
+	const { ControlButton, ContainerProps, ...rest } = props;
 	const { handleViewableChangeRef, navigateToIndex, flatListRef } =
 		useCarousel<CarouselItem>();
 
 	return (
-		<Flex>
+		<Flex {...ContainerProps}>
 			{ControlButton && (
 				<ControlButtonList<CarouselItem>
 					data={rest.data}
