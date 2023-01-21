@@ -21,6 +21,8 @@ module.exports = function(api) {
 						"@global-types": "./src/@types",
 						"@layouts": "./src/layouts",
 						"@utils": "./src/utils",
+						"@interfaces": "./src/interfaces",
+						"@mocks": "./src/mocks",
 					}
 				}
 			]
