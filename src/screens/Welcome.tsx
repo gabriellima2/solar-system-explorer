@@ -6,6 +6,7 @@ import { Text } from "@components/Text";
 import { Icon } from "@components/Icon";
 
 import { Default } from "@layouts/Default";
+import { getDefaultSpacing } from "@utils/get-default-spacing";
 
 export const Welcome = () => {
 	return (
@@ -19,12 +20,16 @@ export const Welcome = () => {
 					flex={1}
 					justifyContent="space-between"
 					pt="44px"
-					px={["24px", "24px", "28px"]}
-					pb={["24px", "24px", "28px"]}
+					px={getDefaultSpacing().px}
+					pb={getDefaultSpacing().pb}
 					pr={["12px", "12px", "16px"]}
 				>
 					<Box>
-						<Text.Heading fontSize={["2xl", "3xl"]} w={[200, 200]} mb="8px">
+						<Text.Heading
+							fontSize={["2xl", "2xl", "3xl"]}
+							maxW={[200, 200, 200]}
+							mb="8px"
+						>
 							Explore o Sistema Solar
 						</Text.Heading>
 						<Text.Body fontSize={["sm", "md"]} w={[260, 290]}>
