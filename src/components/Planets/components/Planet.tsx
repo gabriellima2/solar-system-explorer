@@ -9,7 +9,7 @@ import { getDefaultSpacing } from "@utils/get-default-spacing";
 import { windowDimensions } from "@utils/window-dimensions";
 import type { IPlanet } from "@interfaces/IPlanets";
 
-const { width } = windowDimensions();
+const { width, height } = windowDimensions();
 
 export const Planet = (props: IPlanet) => {
 	const { name_portuguese, image_url, description, name_english } = props;
@@ -23,14 +23,14 @@ export const Planet = (props: IPlanet) => {
 			justifyContent="space-evenly"
 			px={getDefaultSpacing().px}
 			py={getDefaultSpacing().py}
-			pb={["105px", "90px", "40px"]}
+			pb={["105px", "105px", "40px"]}
 		>
 			<Flex w="full" alignItems="center" justifyContent="center" flex={1}>
 				<Image
 					source={{ uri: image_url }}
 					alt={`Planeta ${formattedName}`}
-					w={[width / 1.3, width / 1.8, width / 1.5]}
-					h={[width / 1.3, width / 1.8, width / 1.5]}
+					w={[width / 1.3, width / 1.5, width / 1.5]}
+					h={[height / 1.3, height / 1.5, height / 1.5]}
 					maxW="700px"
 					maxH="700px"
 					size="full"
@@ -40,9 +40,8 @@ export const Planet = (props: IPlanet) => {
 
 			<Flex
 				w="full"
-				h={[width / 4, width / 2.6, "1/5"]}
-				background="amber.800"
-				alignItems="center"
+				h={[height / 6, height / 6, "1/5"]}
+				alignItems={["center", "flex-start", "center"]}
 				justifyContent="space-between"
 				flexDir="row"
 			>
