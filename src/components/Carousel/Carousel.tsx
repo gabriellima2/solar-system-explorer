@@ -1,7 +1,7 @@
 import { FlatList, Flex } from "native-base";
 
 import { useCarousel } from "./hooks/useCarousel";
-import { NavigationList, type NavigationProps } from "./components";
+import { NavigationList } from "./components";
 
 type CarouselProps<CarouselItem extends {}> = Omit<
 	Parameters<typeof FlatList<CarouselItem>>[0],
@@ -11,14 +11,22 @@ type CarouselProps<CarouselItem extends {}> = Omit<
 	| "onViewableItemsChanged"
 	| "showsVerticalScrollIndicator"
 > & {
-	Navigation?: (props: NavigationProps<CarouselItem>) => JSX.Element;
 	ContainerProps?: Parameters<typeof Flex>[0];
+	NavigationListProps?: Omit<
+		Parameters<typeof NavigationList<CarouselItem>>[0],
+		| "data"
+		| "navigateIndex"
+		| "navigateToIndex"
+		| "keyExtractor"
+		| "showsVerticalScrollIndicator"
+		| "currentItemIndex"
+	>;
 };
 
 export const Carousel = <CarouselItem extends {}>(
 	props: CarouselProps<CarouselItem>
 ) => {
-	const { Navigation, ContainerProps, ...rest } = props;
+	const { NavigationListProps, ContainerProps, ...rest } = props;
 	const {
 		handleViewableChangeRef,
 		navigateToIndex,
@@ -28,10 +36,10 @@ export const Carousel = <CarouselItem extends {}>(
 
 	return (
 		<Flex {...ContainerProps}>
-			{Navigation && (
+			{NavigationListProps?.Navigation && (
 				<NavigationList<CarouselItem>
+					{...NavigationListProps}
 					data={rest.data}
-					Navigation={Navigation}
 					navigateToIndex={navigateToIndex}
 					keyExtractor={rest.keyExtractor}
 					showsVerticalScrollIndicator={false}
