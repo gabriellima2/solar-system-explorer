@@ -1,10 +1,10 @@
+import { Planets } from "@components/Planets";
 import { Default } from "@layouts/Default";
-import { Text } from "native-base";
 
 export const Explore = () => {
 	return (
-		<Default>
-			<Text fontFamily="body">Explore</Text>
+		<Default hasDefaultSpacings={false}>
+			<Planets />
 		</Default>
 	);
 };
