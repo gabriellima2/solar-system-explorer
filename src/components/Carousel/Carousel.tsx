@@ -27,12 +27,8 @@ export const Carousel = <CarouselItem extends {}>(
 	props: CarouselProps<CarouselItem>
 ) => {
 	const { NavigationListProps, ContainerProps, ...rest } = props;
-	const {
-		handleViewableChangeRef,
-		navigateToIndex,
-		flatListRef,
-		currentIndex,
-	} = useCarousel<CarouselItem>();
+	const { handleViewableChange, navigateToIndex, flatListRef, currentIndex } =
+		useCarousel<CarouselItem>();
 
 	return (
 		<Flex {...ContainerProps}>
@@ -51,7 +47,7 @@ export const Carousel = <CarouselItem extends {}>(
 				horizontal
 				pagingEnabled
 				ref={flatListRef}
-				onViewableItemsChanged={handleViewableChangeRef.current}
+				onViewableItemsChanged={handleViewableChange.current}
 				showsHorizontalScrollIndicator={false}
 				accessibilityLiveRegion="polite"
 			/>

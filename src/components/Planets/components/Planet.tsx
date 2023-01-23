@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Box, Center, Flex, Image } from "native-base";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
@@ -12,7 +13,7 @@ import type { IPlanet } from "@interfaces/IPlanets";
 
 const { width, height } = windowDimensions();
 
-export const Planet = (props: IPlanet) => {
+export const Planet = memo((props: IPlanet) => {
 	const { name_portuguese, image_url, description, name_english } = props;
 	const bottomTabBarHeight = useBottomTabBarHeight();
 	const formattedName = capitalizeFirstLetter(name_portuguese);
@@ -82,4 +83,4 @@ export const Planet = (props: IPlanet) => {
 			</Flex>
 		</Flex>
 	);
-};
+});

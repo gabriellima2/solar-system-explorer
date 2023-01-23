@@ -1,15 +1,15 @@
 import { useRef, useState, type MutableRefObject } from "react";
 import { type ViewToken, FlatList } from "react-native";
 
-type HandleViewableChangeRefParams = {
+type handleViewableChangeParams = {
 	changed: ViewToken[];
 };
 
 type UseCarouselParams<CarouselItem> = {
 	currentIndex: number;
 	flatListRef: MutableRefObject<FlatList<CarouselItem> | null>;
-	handleViewableChangeRef: MutableRefObject<
-		({ changed }: HandleViewableChangeRefParams) => void
+	handleViewableChange: MutableRefObject<
+		({ changed }: handleViewableChangeParams) => void
 	>;
 	navigateToIndex: (index: number) => void;
 };
@@ -20,8 +20,8 @@ export function useCarousel<
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const flatListRef = useRef<FlatList<CarouselItem> | null>(null);
 
-	const handleViewableChangeRef = useRef(
-		({ changed }: HandleViewableChangeRefParams) => {
+	const handleViewableChange = useRef(
+		({ changed }: handleViewableChangeParams) => {
 			if (!changed[0].isViewable) return;
 			setCurrentIndex(changed[0].index as number);
 		}
@@ -35,7 +35,7 @@ export function useCarousel<
 	return {
 		currentIndex,
 		flatListRef,
-		handleViewableChangeRef,
+		handleViewableChange,
 		navigateToIndex,
 	};
 }

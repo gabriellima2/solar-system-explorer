@@ -1,18 +1,18 @@
-import { useCallback } from "react";
+import { useCallback, memo } from "react";
 import { Button } from "native-base";
 
-import { type NavigationProps as NavigationCarouselProps } from "@components/Carousel/components";
 import { Text } from "@components/Text";
 
 import { capitalizeFirstLetter } from "@utils/capitalize-first-letter";
+import type { NavigationDefaultProps } from "@components/Carousel/@types/NavigationDefaultProps";
 import type { IPlanet } from "@interfaces/IPlanets";
 
 type NavigationButtonProps = Pick<
-	NavigationCarouselProps<IPlanet>,
+	NavigationDefaultProps<IPlanet>,
 	"isActive" | "accessibilityValue" | "name_portuguese" | "onPress"
 >;
 
-export const NavigationButton = (props: NavigationButtonProps) => {
+export const NavigationButton = memo((props: NavigationButtonProps) => {
 	const { isActive, name_portuguese, ...rest } = props;
 	const getPlanetName = useCallback(
 		() => capitalizeFirstLetter(name_portuguese),
@@ -35,4 +35,4 @@ export const NavigationButton = (props: NavigationButtonProps) => {
 			</Text.Body>
 		</Button>
 	);
-};
+});
