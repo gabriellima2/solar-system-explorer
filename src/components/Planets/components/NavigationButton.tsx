@@ -29,7 +29,7 @@ export const NavigationButton = (props: NavigationButtonProps) => {
 			<Text.Body
 				color={isActive ? "primary.200" : "text.600"}
 				fontWeight={isActive ? "500" : "400"}
-				fontSize={["sm", "sm", "lg"]}
+				fontSize={{ base: "sm", md: "lg" }}
 			>
 				{getPlanetName()}
 			</Text.Body>

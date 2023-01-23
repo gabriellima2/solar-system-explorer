@@ -22,12 +22,12 @@ export const Welcome = () => {
 					pt="44px"
 					px={getDefaultSpacing().px}
 					pb={getDefaultSpacing().pb}
-					pr={["12px", "12px", "16px"]}
+					pr={{ base: "12px", lg: "16px" }}
 				>
 					<Box>
 						<Text.Heading
-							fontSize={["2xl", "2xl", "3xl"]}
-							maxW={[200, 200, 200]}
+							fontSize={{ base: "2xl", lg: "3xl" }}
+							maxW={200}
 							mb="8px"
 						>
 							Explore o Sistema Solar

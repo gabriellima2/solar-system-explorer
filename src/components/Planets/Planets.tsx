@@ -25,9 +25,15 @@ export const Planets = () => {
 			renderItem={renderItem}
 			NavigationListProps={{
 				Navigation: NavigationButton,
-				mx: ["14px", "14px", "0"],
-				my: [-3, 1],
-				alignSelf: ["flex-start", "flex-start", "center"],
+				mx: {
+					base: "14px",
+					md: "0px",
+				},
+				mt: [-3, 1],
+				alignSelf: {
+					base: "flex-start",
+					md: "center",
+				},
 			}}
 			viewabilityConfig={{ viewAreaCoveragePercentThreshold: 95 }}
 			w="100%"

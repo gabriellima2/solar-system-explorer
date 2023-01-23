@@ -1,4 +1,5 @@
 import { Box, Center, Flex, Image } from "native-base";
+import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
 import { Text } from "@components/Text";
 import { InfoButton } from "./InfoButton";
@@ -13,6 +14,7 @@ const { width, height } = windowDimensions();
 
 export const Planet = (props: IPlanet) => {
 	const { name_portuguese, image_url, description, name_english } = props;
+	const bottomTabBarHeight = useBottomTabBarHeight();
 	const formattedName = capitalizeFirstLetter(name_portuguese);
 
 	return (
@@ -23,14 +25,18 @@ export const Planet = (props: IPlanet) => {
 			justifyContent="space-evenly"
 			px={getDefaultSpacing().px}
 			py={getDefaultSpacing().py}
-			pb={["105px", "105px", "40px"]}
+			pb={Number(bottomTabBarHeight.toFixed(0)) + 0}
 		>
-			<Flex w="full" alignItems="center" justifyContent="center" flex={1}>
+			<Flex
+				w="full"
+				h={{ base: height / 2.4, lg: "4/5" }}
+				alignItems="center"
+				justifyContent="center"
+			>
 				<Image
 					source={{ uri: image_url }}
 					alt={`Planeta ${formattedName}`}
-					w={[width / 1.3, width / 1.5, width / 1.5]}
-					h={[height / 1.3, height / 1.5, height / 1.5]}
+					w="full"
 					maxW="700px"
 					maxH="700px"
 					size="full"
@@ -40,27 +46,27 @@ export const Planet = (props: IPlanet) => {
 
 			<Flex
 				w="full"
-				h={[height / 6, height / 6, "1/5"]}
-				alignItems={["center", "flex-start", "center"]}
+				flexShrink={1}
+				alignItems="flex-start"
 				justifyContent="space-between"
 				flexDir="row"
 			>
 				<Box>
 					<Flex flexDir="row" alignItems="center" mb={2}>
 						<Text.Body
-							fontSize={["xl", "xl", "4xl"]}
+							fontSize={{ base: "xl", md: "4xl" }}
 							color="text.100"
-							mr={[2, 2, 3]}
+							mr={{ base: 2, md: 3 }}
 						>
 							Planeta
 						</Text.Body>
-						<Text.Heading fontSize={["xl", "xl", "4xl"]}>
+						<Text.Heading fontSize={{ base: "xl", md: "4xl" }}>
 							{formattedName}
 						</Text.Heading>
 					</Flex>
 					<Text.Body
 						fontSize={["sm", "md", "lg"]}
-						w={["300px", "300px", width / 2]}
+						w={{ base: "300px", md: width / 2 }}
 						numberOfLines={3}
 					>
 						{description}

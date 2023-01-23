@@ -42,7 +42,7 @@ export const Carousel = <CarouselItem extends {}>(
 					data={rest.data}
 					navigateToIndex={navigateToIndex}
 					keyExtractor={rest.keyExtractor}
-					showsVerticalScrollIndicator={false}
+					showsHorizontalScrollIndicator={false}
 					currentItemIndex={currentIndex}
 				/>
 			)}
@@ -52,7 +52,7 @@ export const Carousel = <CarouselItem extends {}>(
 				pagingEnabled
 				ref={flatListRef}
 				onViewableItemsChanged={handleViewableChangeRef.current}
-				showsVerticalScrollIndicator={false}
+				showsHorizontalScrollIndicator={false}
 				accessibilityLiveRegion="polite"
 			/>
 		</Flex>
