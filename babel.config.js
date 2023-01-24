@@ -23,6 +23,7 @@ module.exports = function(api) {
 						"@utils": "./src/utils",
 						"@interfaces": "./src/interfaces",
 						"@mocks": "./src/mocks",
+						"@store": "./src/store",
 					}
 				}
 			]

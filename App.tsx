@@ -14,7 +14,7 @@ import {
 } from "@expo-google-fonts/inter";
 
 import { Loading } from "@components/Loading";
-import { persistor, store } from "src/store";
+import { persistor, store } from "@store/index";
 import { Routes } from "./src/routes";
 
 import { theme } from "@styles/theme";
