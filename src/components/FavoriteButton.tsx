@@ -2,8 +2,8 @@ import { TouchableOpacity } from "react-native";
 import { Icon } from "@components/Icon";
 
 type FavoriteButtonProps = {
-	elementID: string | number;
-	handlePress: (elementID: string | number) => void;
+	elementID: string;
+	handlePress: (elementID: string) => void;
 	iconSize?: number;
 };
 

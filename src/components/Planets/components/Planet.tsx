@@ -1,4 +1,5 @@
-import { memo } from "react";
+import { memo, useCallback } from "react";
+import { useDispatch } from "react-redux";
 import { Box, Center, Flex, Image } from "native-base";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
@@ -10,13 +11,19 @@ import { capitalizeFirstLetter } from "@utils/capitalize-first-letter";
 import { getDefaultSpacing } from "@utils/get-default-spacing";
 import { windowDimensions } from "@utils/window-dimensions";
 import type { IPlanet } from "@interfaces/IPlanets";
+import { setFavorite } from "src/store/modules/favorites-module/actions";
 
 const { width, height } = windowDimensions();
 
 export const Planet = memo((props: IPlanet) => {
 	const { name_portuguese, image_url, description, name_english } = props;
 	const bottomTabBarHeight = useBottomTabBarHeight();
-	const formattedName = capitalizeFirstLetter(name_portuguese);
+	const dispatch = useDispatch();
+
+	const formattedName = useCallback(
+		() => capitalizeFirstLetter(name_portuguese),
+		[]
+	);
 
 	return (
 		<Flex
@@ -26,7 +33,7 @@ export const Planet = memo((props: IPlanet) => {
 			justifyContent="space-evenly"
 			px={getDefaultSpacing().px}
 			py={getDefaultSpacing().py}
-			pb={Number(bottomTabBarHeight.toFixed(0)) + 0}
+			pb={Number(bottomTabBarHeight.toFixed(0))}
 		>
 			<Flex
 				w="full"
@@ -36,7 +43,7 @@ export const Planet = memo((props: IPlanet) => {
 			>
 				<Image
 					source={{ uri: image_url }}
-					alt={`Planeta ${formattedName}`}
+					alt={`Planeta ${formattedName()}`}
 					w="full"
 					maxW="700px"
 					maxH="700px"
@@ -62,7 +69,7 @@ export const Planet = memo((props: IPlanet) => {
 							Planeta
 						</Text.Body>
 						<Text.Heading fontSize={{ base: "xl", md: "4xl" }}>
-							{formattedName}
+							{formattedName()}
 						</Text.Heading>
 					</Flex>
 					<Text.Body
@@ -76,7 +83,9 @@ export const Planet = memo((props: IPlanet) => {
 				<Center>
 					<FavoriteButton
 						elementID={name_english}
-						handlePress={(id) => console.log(id)}
+						handlePress={(name_english) => {
+							dispatch(setFavorite({ item: name_english }));
+						}}
 					/>
 					<InfoButton elementID={name_english} />
 				</Center>

@@ -1,6 +1,8 @@
 import "react-native-gesture-handler";
+import { Provider } from "react-redux";
 import { StatusBar } from "expo-status-bar";
 import { NativeBaseProvider } from "native-base";
+import { PersistGate } from "redux-persist/integration/react";
 import {
 	useFonts,
 	Inter_200ExtraLight,
@@ -12,7 +14,9 @@ import {
 } from "@expo-google-fonts/inter";
 
 import { Loading } from "@components/Loading";
+import { persistor, store } from "src/store";
 import { Routes } from "./src/routes";
+
 import { theme } from "@styles/theme";
 
 export default function App() {
@@ -30,10 +34,12 @@ export default function App() {
 			{!fontsLoaded ? (
 				<Loading />
 			) : (
-				<>
-					<StatusBar style="light" />
-					<Routes />
-				</>
+				<Provider store={store}>
+					<PersistGate persistor={persistor} loading={<Loading />}>
+						<StatusBar style="light" />
+						<Routes />
+					</PersistGate>
+				</Provider>
 			)}
 		</NativeBaseProvider>
 	);
