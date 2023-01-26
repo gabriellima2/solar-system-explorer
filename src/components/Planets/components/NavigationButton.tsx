@@ -1,4 +1,4 @@
-import { useCallback, memo } from "react";
+import { useCallback } from "react";
 import { Button } from "native-base";
 
 import { Text } from "@components/Text";
@@ -12,7 +12,7 @@ type NavigationButtonProps = Pick<
 	"isActive" | "accessibilityValue" | "name_portuguese" | "onPress"
 >;
 
-export const NavigationButton = memo((props: NavigationButtonProps) => {
+export const NavigationButton = (props: NavigationButtonProps) => {
 	const { isActive, name_portuguese, ...rest } = props;
 	const getPlanetName = useCallback(
 		() => capitalizeFirstLetter(name_portuguese),
@@ -35,4 +35,4 @@ export const NavigationButton = memo((props: NavigationButtonProps) => {
 			</Text.Body>
 		</Button>
 	);
-});
+};
