@@ -1,7 +1,10 @@
-import { PayloadAction } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import type { FavoritesState } from "./FavoritesState";
 
-type SetFavorite = {
+type Params = {
+	key: keyof FavoritesState;
 	item: string;
 };
 
-export type SetFavoriteAction = PayloadAction<SetFavorite>;
+export type RemoveFromFavorite = PayloadAction<Params>;
+export type SetInFavoriteAction = PayloadAction<Params>;

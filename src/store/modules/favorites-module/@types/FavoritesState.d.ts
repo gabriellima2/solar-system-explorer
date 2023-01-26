@@ -1,3 +1,3 @@
 export type FavoritesState = {
-	planets: string[] | [];
+	planets: string[];
 };
