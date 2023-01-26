@@ -18,7 +18,7 @@ const { width, height } = windowDimensions();
 export const Planet = memo((props: IPlanet) => {
 	const { name_portuguese, image_url, description, name_english } = props;
 	const bottomTabBarHeight = useBottomTabBarHeight();
-	const { handlePressFavorite } = useFavorite("planets");
+	const { handleFavorite } = useFavorite("planets");
 
 	const formattedName = useCallback(
 		() => capitalizeFirstLetter(name_portuguese),
@@ -83,7 +83,7 @@ export const Planet = memo((props: IPlanet) => {
 				<Center>
 					<FavoriteButton
 						elementID={name_english}
-						handlePress={(name_english) => handlePressFavorite(name_english)}
+						handlePress={(name_english) => handleFavorite(name_english)}
 					/>
 					<InfoButton elementID={name_english} />
 				</Center>

@@ -8,7 +8,7 @@ import type { FavoritesState } from "@store/modules/favorites-module/@types/Favo
 
 type UseFavoriteReturn = {
 	items: string[];
-	handlePressFavorite: (id: string) => void;
+	handleFavorite: (id: string) => void;
 };
 
 export function useFavorite(key: keyof FavoritesState): UseFavoriteReturn {
@@ -19,7 +19,7 @@ export function useFavorite(key: keyof FavoritesState): UseFavoriteReturn {
 		return favorites[key].find((item) => item === id);
 	};
 
-	const handlePressFavorite = (id: string) => {
+	const handleFavorite = (id: string) => {
 		const alreadyFavorite = checkIfAlreadyFavorite(id);
 		if (alreadyFavorite) {
 			dispatch(removeFromFavorite({ key, item: id }));
@@ -31,6 +31,6 @@ export function useFavorite(key: keyof FavoritesState): UseFavoriteReturn {
 
 	return {
 		items: favorites[key],
-		handlePressFavorite,
+		handleFavorite,
 	};
 }
