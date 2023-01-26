@@ -8,18 +8,22 @@ import type { FavoritesState } from "@store/modules/favorites-module/@types/Favo
 
 type UseFavoriteReturn = {
 	items: string[];
+	isFavorite: boolean;
 	handleFavorite: (id: string) => void;
 };
 
-export function useFavorite(key: keyof FavoritesState): UseFavoriteReturn {
+export function useFavorite(
+	key: keyof FavoritesState,
+	id: string
+): UseFavoriteReturn {
 	const dispatch = useDispatch();
 	const favorites = useFavoriteSelect();
 
-	const checkIfAlreadyFavorite = (id: string) => {
-		return favorites[key].find((item) => item === id);
+	const checkIfAlreadyFavorite = (itemID: string) => {
+		return !!favorites[key].find((item) => item === itemID);
 	};
 
-	const handleFavorite = (id: string) => {
+	const handleFavorite = () => {
 		const alreadyFavorite = checkIfAlreadyFavorite(id);
 		if (alreadyFavorite) {
 			dispatch(removeFromFavorite({ key, item: id }));
@@ -31,6 +35,7 @@ export function useFavorite(key: keyof FavoritesState): UseFavoriteReturn {
 
 	return {
 		items: favorites[key],
+		isFavorite: checkIfAlreadyFavorite(id),
 		handleFavorite,
 	};
 }
