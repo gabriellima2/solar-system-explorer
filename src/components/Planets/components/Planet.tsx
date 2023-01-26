@@ -2,6 +2,8 @@ import { memo, useCallback } from "react";
 import { Box, Center, Flex, Image } from "native-base";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
+import { useFavorite } from "@hooks/useFavorite";
+
 import { Text } from "@components/Text";
 import { InfoButton } from "./InfoButton";
 import { FavoriteButton } from "../../FavoriteButton";
@@ -10,7 +12,6 @@ import { capitalizeFirstLetter } from "@utils/capitalize-first-letter";
 import { getDefaultSpacing } from "@utils/get-default-spacing";
 import { windowDimensions } from "@utils/window-dimensions";
 import type { IPlanet } from "@interfaces/IPlanets";
-import { useFavorite } from "@hooks/useFavorite";
 
 const { width, height } = windowDimensions();
 
