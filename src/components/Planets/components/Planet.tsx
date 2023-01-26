@@ -1,9 +1,6 @@
 import { memo, useCallback } from "react";
-import { useDispatch } from "react-redux";
 import { Box, Center, Flex, Image } from "native-base";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
-
-import { setFavorite } from "@store/modules/favorites-module";
 
 import { Text } from "@components/Text";
 import { InfoButton } from "./InfoButton";
@@ -13,13 +10,14 @@ import { capitalizeFirstLetter } from "@utils/capitalize-first-letter";
 import { getDefaultSpacing } from "@utils/get-default-spacing";
 import { windowDimensions } from "@utils/window-dimensions";
 import type { IPlanet } from "@interfaces/IPlanets";
+import { useFavorite } from "@hooks/useFavorite";
 
 const { width, height } = windowDimensions();
 
 export const Planet = memo((props: IPlanet) => {
 	const { name_portuguese, image_url, description, name_english } = props;
 	const bottomTabBarHeight = useBottomTabBarHeight();
-	const dispatch = useDispatch();
+	const { handlePressFavorite } = useFavorite("planets");
 
 	const formattedName = useCallback(
 		() => capitalizeFirstLetter(name_portuguese),
@@ -84,9 +82,7 @@ export const Planet = memo((props: IPlanet) => {
 				<Center>
 					<FavoriteButton
 						elementID={name_english}
-						handlePress={(name_english) => {
-							dispatch(setFavorite({ item: name_english }));
-						}}
+						handlePress={(name_english) => handlePressFavorite(name_english)}
 					/>
 					<InfoButton elementID={name_english} />
 				</Center>
