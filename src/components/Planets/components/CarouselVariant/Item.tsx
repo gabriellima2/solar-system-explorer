@@ -21,7 +21,7 @@ export const Item = (props: IPlanet) => {
 	const { handleFavorite, isFavorite } = useFavorite("planets", name_english);
 	const bottomTabBarHeight = useBottomTabBarHeight();
 
-	const formmatedName = useCallback(
+	const formattedName = useCallback(
 		() => capitalizeFirstLetter(name_portuguese),
 		[]
 	);
@@ -44,7 +44,7 @@ export const Item = (props: IPlanet) => {
 			>
 				<Image
 					source={{ uri: image_url }}
-					alt={`Planeta ${formmatedName()}`}
+					alt={`Planeta ${formattedName()}`}
 					w="full"
 					maxW="700px"
 					maxH="700px"
@@ -70,7 +70,7 @@ export const Item = (props: IPlanet) => {
 							Planeta
 						</Text.Body>
 						<Text.Heading fontSize={{ base: "xl", md: "4xl" }}>
-							{formmatedName()}
+							{formattedName()}
 						</Text.Heading>
 					</Flex>
 					<Text.Body
