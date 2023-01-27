@@ -1,12 +1,12 @@
-import { memo, useCallback } from "react";
+import { useCallback } from "react";
 import { Box, Center, Flex, Image } from "native-base";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
 import { useFavorite } from "@hooks/useFavorite";
 
+import { FavoriteButton } from "@components/FavoriteButton";
+import { InfoButton } from "../InfoButton";
 import { Text } from "@components/Text";
-import { InfoButton } from "./InfoButton";
-import { FavoriteButton } from "../../FavoriteButton";
 
 import { capitalizeFirstLetter } from "@utils/capitalize-first-letter";
 import { getDefaultSpacing } from "@utils/get-default-spacing";
@@ -15,12 +15,13 @@ import type { IPlanet } from "@interfaces/IPlanets";
 
 const { width, height } = windowDimensions();
 
-export const Planet = memo((props: IPlanet) => {
-	const { name_portuguese, image_url, description, name_english } = props;
-	const bottomTabBarHeight = useBottomTabBarHeight();
-	const { handleFavorite, isFavorite } = useFavorite("planets", name_english);
+export const Item = (props: IPlanet) => {
+	const { name_portuguese, name_english, description, image_url } = props;
 
-	const formattedName = useCallback(
+	const { handleFavorite, isFavorite } = useFavorite("planets", name_english);
+	const bottomTabBarHeight = useBottomTabBarHeight();
+
+	const formmatedName = useCallback(
 		() => capitalizeFirstLetter(name_portuguese),
 		[]
 	);
@@ -43,7 +44,7 @@ export const Planet = memo((props: IPlanet) => {
 			>
 				<Image
 					source={{ uri: image_url }}
-					alt={`Planeta ${formattedName()}`}
+					alt={`Planeta ${formmatedName()}`}
 					w="full"
 					maxW="700px"
 					maxH="700px"
@@ -69,7 +70,7 @@ export const Planet = memo((props: IPlanet) => {
 							Planeta
 						</Text.Body>
 						<Text.Heading fontSize={{ base: "xl", md: "4xl" }}>
-							{formattedName()}
+							{formmatedName()}
 						</Text.Heading>
 					</Flex>
 					<Text.Body
@@ -91,4 +92,4 @@ export const Planet = memo((props: IPlanet) => {
 			</Flex>
 		</Flex>
 	);
-});
+};
