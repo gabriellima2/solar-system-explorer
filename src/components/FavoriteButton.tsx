@@ -19,6 +19,7 @@ export const FavoriteButton = (props: FavoriteButtonProps) => {
 			onPress={() => handlePress(elementID)}
 			activeOpacity={0.5}
 			style={{ padding: 4 }}
+			hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
 		>
 			<Icon
 				name={isFavorite ? "heart" : "heart-outline"}

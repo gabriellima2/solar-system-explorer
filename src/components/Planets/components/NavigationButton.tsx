@@ -25,6 +25,7 @@ export const NavigationButton = (props: NavigationButtonProps) => {
 			background="transparent"
 			textTransform="capitalize"
 			mr="1"
+			hitSlop={4}
 		>
 			<Text.Body
 				color={isActive ? "primary.200" : "text.600"}

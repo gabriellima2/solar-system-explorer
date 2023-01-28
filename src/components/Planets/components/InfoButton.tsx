@@ -12,6 +12,7 @@ export const InfoButton = (props: InfoButtonProps) => {
 			accessibilityLabel="Ver mais informações"
 			activeOpacity={0.5}
 			style={{ padding: 4, marginTop: 8 }}
+			hitSlop={{ top: 4, bottom: 8, left: 8, right: 8 }}
 		>
 			<Icon name="information-circle-outline" size={24} />
 		</TouchableOpacity>
