@@ -46,13 +46,12 @@ export const Tabs = () => {
 						borderTopLeftRadius: 24,
 						borderTopRightRadius: 24,
 						paddingTop: 0,
-						backgroundColor: colors.dark[700],
+						backgroundColor: colors.dark[800],
 					},
 					headerTitleStyle: {
 						fontFamily: "InterMedium",
 						color: colors.text[50],
 						fontSize: 14,
-						marginLeft: 8,
 					},
 					headerShadowVisible: false,
 					headerStyle: {

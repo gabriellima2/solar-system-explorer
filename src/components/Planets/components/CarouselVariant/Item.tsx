@@ -33,12 +33,12 @@ export const Item = (props: IPlanet) => {
 			alignItems="center"
 			justifyContent="space-evenly"
 			px={getDefaultSpacing().px}
-			py={getDefaultSpacing().py}
-			pb={Number(bottomTabBarHeight.toFixed(0))}
+			pt={getDefaultSpacing().pt}
+			pb={bottomTabBarHeight}
 		>
 			<Flex
 				w="full"
-				h={{ base: height / 2.4, lg: "4/5" }}
+				h={{ base: height / 2.4, lg: "4/6" }}
 				alignItems="center"
 				justifyContent="center"
 			>

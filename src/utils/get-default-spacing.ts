@@ -1,11 +1,11 @@
 export function getDefaultSpacing() {
-	const padding = ["24px", "24px", "28px"];
-	const margin = ["24px", "24px", "28px"];
+	const padding = ["16px", "16px", "24px"];
+	const margin = ["16px", "16px", "24px"];
 
 	return {
 		pl: padding,
 		pr: padding,
-		pt: padding,
+		pt: ["4px", "4px", "12px"],
 		pb: padding,
 		px: padding,
 		py: padding,

@@ -25,10 +25,9 @@ export const CarouselVariant = (props: CarouselVariantProps) => {
 			NavigationListProps={{
 				Navigation: NavigationButton,
 				mx: {
-					base: "14px",
+					base: "6px",
 					md: "0px",
 				},
-				mt: [-3, 1],
 				alignSelf: {
 					base: "flex-start",
 					md: "center",

@@ -1,4 +1,5 @@
 import { Box } from "native-base";
+import { getDefaultSpacing } from "@utils/get-default-spacing";
 import type { WithChildren } from "@global-types/WithChildren";
 
 type DefaultProps = Omit<
@@ -11,12 +12,12 @@ type DefaultProps = Omit<
 export const Default = (props: WithChildren<DefaultProps>) => {
 	const { hasDefaultSpacings = true, ...rest } = props;
 	const paddings = {
-		px: hasDefaultSpacings ? "24px" : 0,
-		pt: hasDefaultSpacings ? "8px" : 0,
+		px: hasDefaultSpacings ? getDefaultSpacing().px : 0,
+		pt: hasDefaultSpacings ? getDefaultSpacing().pt : 0,
 	};
 
 	return (
-		<Box background="dark.900" flex={1} safeArea {...paddings} {...rest}>
+		<Box background="dark.900" flex={1} {...paddings} {...rest}>
 			{props.children}
 		</Box>
 	);
