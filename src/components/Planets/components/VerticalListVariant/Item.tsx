@@ -35,7 +35,7 @@ export const Item = (props: ItemProps) => {
 		<TouchableOpacity
 			onPress={() => console.log("On press!")}
 			accessibilityLabel={`Ver mais informações sobre o planeta ${formattedName()}`}
-			accessibilityHint={"Se clicado, abrirá um modal com diversas informações"}
+			accessibilityHint="Se clicado, abrirá um modal com diversas informações"
 			activeOpacity={0.8}
 		>
 			<Center
@@ -49,41 +49,41 @@ export const Item = (props: ItemProps) => {
 				h="128px"
 				mb="20px"
 			>
-				<Center flexDir="row" mr="3">
+				<Center
+					flex={1}
+					flexDir="row"
+					alignItems="center"
+					justifyContent="flex-start"
+					mr="3"
+				>
 					<Image
 						source={{ uri: image_url }}
 						alt={`Planeta ${formattedName()}`}
-						size="sm"
+						w={width / 7}
+						h={width / 7}
 						resizeMode="contain"
 					/>
 
-					<Box ml="3">
-						<Flex flexDir="row" alignItems="center" mb={2}>
-							<Text.Body
-								fontSize={{ base: "md" }}
-								color="text.100"
-								mr={{ base: "1" }}
-							>
+					<Box ml="4" flex={1}>
+						<Flex flexDir="row" alignItems="center" mb="1.5">
+							<Text.Body fontSize="md" color="text.100" mr="2">
 								Planeta
 							</Text.Body>
-							<Text.Heading fontSize={{ base: "md" }}>
-								{formattedName()}
-							</Text.Heading>
+							<Text.Heading fontSize="md">{formattedName()}</Text.Heading>
 						</Flex>
-						<Text.Body
-							numberOfLines={2}
-							maxW={width / 2.1}
-							fontSize={{ base: "sm" }}
-						>
+
+						<Text.Body numberOfLines={2} fontSize="sm">
 							{description}
 						</Text.Body>
 					</Box>
 				</Center>
-				<FavoriteButton
-					isFavorite={isFavorite}
-					elementID={name_english}
-					handlePress={handleFavorite}
-				/>
+				<Center flexShrink={1}>
+					<FavoriteButton
+						isFavorite={isFavorite}
+						elementID={name_english}
+						handlePress={handleFavorite}
+					/>
+				</Center>
 			</Center>
 		</TouchableOpacity>
 	);
