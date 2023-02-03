@@ -24,9 +24,12 @@ module.exports = function(api) {
 						"@interfaces": "./src/interfaces",
 						"@mocks": "./src/mocks",
 						"@store": "./src/store",
+						"@infra": "./src/infra",
+						"@contexts": "./src/contexts",
 					}
-				}
-			]
-		]
+				},
+			],
+			"react-native-reanimated/plugin",
+		],
   };
 };

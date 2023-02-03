@@ -2,6 +2,7 @@ import "react-native-gesture-handler";
 import { Provider } from "react-redux";
 import { StatusBar } from "expo-status-bar";
 import { NativeBaseProvider } from "native-base";
+import { QueryClientProvider } from "react-query";
 import { PersistGate } from "redux-persist/integration/react";
 import {
 	useFonts,
@@ -14,6 +15,8 @@ import {
 } from "@expo-google-fonts/inter";
 
 import { Loading } from "@components/Loading";
+
+import { queryClient } from "@infra/lib/query-client";
 import { persistor, store } from "@store/index";
 import { Routes } from "./src/routes";
 
@@ -36,8 +39,10 @@ export default function App() {
 			) : (
 				<Provider store={store}>
 					<PersistGate persistor={persistor} loading={<Loading />}>
-						<StatusBar style="light" />
-						<Routes />
+						<QueryClientProvider client={queryClient}>
+							<StatusBar style="light" />
+							<Routes />
+						</QueryClientProvider>
 					</PersistGate>
 				</Provider>
 			)}

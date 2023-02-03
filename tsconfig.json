@@ -13,6 +13,8 @@
 			"@interfaces/*": ["./src/interfaces/*"],
 			"@mocks/*": ["./src/mocks/*"],
 			"@store/*": ["./src/store/*"],
+			"@infra/*": ["./src/infra/*"],
+			"@contexts/*": ["./src/contexts/*"],
     },
 	},
   "extends": "expo/tsconfig.base"
