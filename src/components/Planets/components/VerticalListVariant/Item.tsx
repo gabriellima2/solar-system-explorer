@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import { TouchableOpacity } from "react-native";
 import { Box, Center, Flex, Image } from "native-base";
 
+import { usePlanetDetailsContext } from "@contexts/planet-details-context";
 import { useFavorite } from "@hooks/useFavorite";
 
 import { FavoriteButton } from "@components/FavoriteButton";
@@ -21,6 +22,7 @@ export const Item = (props: ItemProps) => {
 	const { name_portuguese, name_english, description, image_url, variants } =
 		props;
 
+	const { handleExpand } = usePlanetDetailsContext();
 	const { handleFavorite, isFavorite } = useFavorite("planets", name_english);
 
 	const formattedName = useCallback(
@@ -33,7 +35,7 @@ export const Item = (props: ItemProps) => {
 
 	return (
 		<TouchableOpacity
-			onPress={() => console.log("On press!")}
+			onPress={() => handleExpand(name_english)}
 			accessibilityLabel={`Ver mais informações sobre o planeta ${formattedName()}`}
 			accessibilityHint="Se clicado, abrirá um modal com diversas informações"
 			activeOpacity={0.8}
