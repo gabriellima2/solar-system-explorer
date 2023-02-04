@@ -26,6 +26,7 @@ module.exports = function(api) {
 						"@store": "./src/store",
 						"@infra": "./src/infra",
 						"@contexts": "./src/contexts",
+						"@protocols": "./src/protocols",
 					}
 				},
 			],

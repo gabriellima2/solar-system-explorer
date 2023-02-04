@@ -15,6 +15,7 @@
 			"@store/*": ["./src/store/*"],
 			"@infra/*": ["./src/infra/*"],
 			"@contexts/*": ["./src/contexts/*"],
+			"@protocols/*": ["./src/protocols/*"],
     },
 	},
   "extends": "expo/tsconfig.base"
