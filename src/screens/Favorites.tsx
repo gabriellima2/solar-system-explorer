@@ -5,7 +5,7 @@ import { useFavoriteSelect } from "@store/modules/favorites-module";
 import { Planets } from "@components/Planets";
 import { Error } from "@components/Error";
 
-import planetsData from "@mocks/planets.json";
+import { planetFinder } from "@utils/planet-finder";
 import type { IPlanet } from "@interfaces/IPlanets";
 
 export const Favorites = () => {
@@ -19,9 +19,7 @@ export const Favorites = () => {
 		);
 
 	const favoritesPlanets = planets.reduce<IPlanet[]>((acc, favoritePlanet) => {
-		const planet = planetsData.find(
-			(planet) => favoritePlanet === planet.name_english
-		);
+		const planet = planetFinder("name_english", favoritePlanet);
 		if (!planet) return acc;
 		return [...acc, planet];
 	}, []);
