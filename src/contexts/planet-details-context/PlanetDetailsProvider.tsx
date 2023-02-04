@@ -2,9 +2,6 @@ import { useRef, useState } from "react";
 
 import { PlanetDetailsContext } from "./PlanetDetailsContext";
 
-import { PlanetDetails } from "@components/PlanetDetails";
-import { BottomSheet } from "@components/BottomSheet";
-
 import type { WithChildren } from "@global-types/WithChildren";
 import type { BottomSheetRef } from "./@types/BottomSheetRef";
 
@@ -25,15 +22,9 @@ export const PlanetDetailsProvider = (props: WithChildren<{}>) => {
 
 	return (
 		<PlanetDetailsContext.Provider
-			value={{ bottomSheetRef, handleClose, handleExpand }}
+			value={{ bottomSheetRef, handleClose, handleExpand, planetID }}
 		>
 			{props.children}
-			<BottomSheet
-				ref={bottomSheetRef}
-				backgroundStyle={{ backgroundColor: "#000" }}
-			>
-				{planetID && <PlanetDetails id={planetID} />}
-			</BottomSheet>
 		</PlanetDetailsContext.Provider>
 	);
 };

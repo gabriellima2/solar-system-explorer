@@ -9,6 +9,7 @@ import { PlanetDetailsProvider } from "@contexts/planet-details-context";
 import { Explore } from "@screens/Explore";
 import { Favorites } from "@screens/Favorites";
 
+import { PlanetDetailsBottomSheet } from "@components/PlanetDetailsBottomSheet";
 import { Logo } from "@components/Logo";
 
 import { windowDimensions } from "@utils/window-dimensions";
@@ -93,6 +94,7 @@ export const Tabs = () => {
 						transform: [{ translateX: offsetAnimation }],
 					}}
 				/>
+				<PlanetDetailsBottomSheet />
 			</NavigationContainer>
 		</PlanetDetailsProvider>
 	);
