@@ -1,8 +1,10 @@
 import { Box } from "native-base";
+import { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 
 import { usePlanetDetailsContext } from "@contexts/planet-details-context";
 
 import { BottomSheet } from "@components/BottomSheet";
+import { Images } from "./components/Images";
 import { Overview } from "./components";
 
 import { getDefaultSpacing } from "@utils/get-default-spacing";
@@ -13,9 +15,12 @@ export const PlanetDetailsBottomSheet = () => {
 	return (
 		<BottomSheet ref={bottomSheetRef}>
 			{planetID && (
-				<Box p={getDefaultSpacing().p}>
-					<Overview />
-				</Box>
+				<BottomSheetScrollView>
+					<Box p={getDefaultSpacing().p}>
+						<Overview />
+						<Images />
+					</Box>
+				</BottomSheetScrollView>
 			)}
 		</BottomSheet>
 	);
