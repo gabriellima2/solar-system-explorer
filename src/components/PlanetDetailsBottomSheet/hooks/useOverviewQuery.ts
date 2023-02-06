@@ -6,15 +6,13 @@ import { planetFinder } from "@utils/planet-finder";
 import { isObject } from "@utils/is-object";
 
 import type { IPlanetOverview } from "../@types/IPlanetOverview";
+import type { QueryDefaultReturn } from "../@types/QueryDefaultReturn";
 
-type UseOverviewReturn = {
+type UseOverviewQueryReturn = QueryDefaultReturn & {
 	planet: IPlanetOverview | undefined;
-	error: string;
-	isError: boolean;
-	isLoading: boolean;
 };
 
-export function useOverview(id: string): UseOverviewReturn {
+export function useOverviewQuery(id: string): UseOverviewQueryReturn {
 	const { data, error, isError, isLoading } = useQuery(
 		["overview", id],
 		() => planetDetailsServices.getOverview(id),

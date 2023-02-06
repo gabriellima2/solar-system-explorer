@@ -2,7 +2,7 @@ import { ActivityIndicator } from "react-native";
 import { Box, Flex } from "native-base";
 
 import { usePlanetDetailsContext } from "@contexts/planet-details-context";
-import { useOverview } from "../hooks/useOverview";
+import { useOverviewQuery } from "../hooks/useOverviewQuery";
 
 import { PlanetName } from "@components/PlanetName";
 import { Error } from "@components/Error";
@@ -11,7 +11,7 @@ import { InfoGroup } from "./InfoGroup";
 
 export const Overview = () => {
 	const { planetID } = usePlanetDetailsContext();
-	const { planet, error, isError, isLoading } = useOverview(planetID!);
+	const { planet, error, isError, isLoading } = useOverviewQuery(planetID!);
 
 	if (isLoading) return <ActivityIndicator />;
 
