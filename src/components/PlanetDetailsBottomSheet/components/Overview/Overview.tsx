@@ -1,5 +1,4 @@
-import { ActivityIndicator } from "react-native";
-import { Box, Flex } from "native-base";
+import { Box, VStack } from "native-base";
 
 import { usePlanetDetailsContext } from "@contexts/planet-details-context";
 import { useOverviewQuery } from "../../hooks/useOverviewQuery";
@@ -8,6 +7,7 @@ import { PlanetName } from "@components/PlanetName";
 import { Error } from "@components/Error";
 import { InfoGroup } from "../InfoGroup";
 import { Text } from "@components/Text";
+import { Loading } from "./Loading";
 
 import { DEFAULT_ERROR } from "../../constants/default-error";
 
@@ -15,33 +15,39 @@ export const Overview = () => {
 	const { planetID } = usePlanetDetailsContext();
 	const { planet, error, isError, isLoading } = useOverviewQuery(planetID!);
 
-	if (isLoading) return <ActivityIndicator />;
+	if (isLoading) return <Loading />;
 
 	if (isError) return <Error message={error || DEFAULT_ERROR} />;
 
 	if (!planet) return null;
 
 	return (
-		<Flex>
+		<VStack space="32px">
 			<Box>
-				<PlanetName name={{ value: planet.name_portuguese }} />
+				<PlanetName name={{ value: planet.name_portuguese, fontSize: "xl" }} />
 				<Text.Body>{planet.description}</Text.Body>
 			</Box>
-			<Flex>
-				<Box>
-					<InfoGroup title="Gravidade" value={planet.gravity} />
-					<InfoGroup title="Massa" value={planet.mass.massValue} />
-					<InfoGroup title="Densidade" value={planet.density} />
-				</Box>
-				<Box>
-					<InfoGroup title="Completa um ano" value={planet.sideralOrbit} />
-					<InfoGroup title="Completa um dia" value={planet.sideralRotation} />
+			<VStack direction="row" alignItems="center" flexWrap="wrap" space="66px">
+				<VStack space="12px">
+					<InfoGroup title="Gravidade" value={`${planet.gravity} m/s²`} />
+					<InfoGroup title="Massa" value={`${planet.mass.massValue} Kg`} />
+					<InfoGroup title="Densidade" value={`${planet.density} g/cm 3`} />
+				</VStack>
+				<VStack space="12px">
+					<InfoGroup
+						title="Completa um ano"
+						value={`${planet.sideralOrbit} Dias Terrestres`}
+					/>
+					<InfoGroup
+						title="Completa um dia"
+						value={`${planet.sideralRotation} Horas`}
+					/>
 					<InfoGroup
 						title="Quantidade de luas"
 						value={planet.moons?.length || 0}
 					/>
-				</Box>
-			</Flex>
-		</Flex>
+				</VStack>
+			</VStack>
+		</VStack>
 	);
 };

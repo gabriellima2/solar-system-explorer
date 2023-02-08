@@ -1,4 +1,4 @@
-import { Box } from "native-base";
+import { VStack } from "native-base";
 import { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 
 import { usePlanetDetailsContext } from "@contexts/planet-details-context";
@@ -15,10 +15,10 @@ export const PlanetDetailsBottomSheet = () => {
 		<BottomSheet ref={bottomSheetRef}>
 			{planetID && (
 				<BottomSheetScrollView>
-					<Box p={getDefaultSpacing().p}>
+					<VStack p={getDefaultSpacing().p} space="32px">
 						<Overview />
 						<Images />
-					</Box>
+					</VStack>
 				</BottomSheetScrollView>
 			)}
 		</BottomSheet>

@@ -1,4 +1,4 @@
-import { Box } from "native-base";
+import { VStack } from "native-base";
 import { Text } from "@components/Text";
 
 type InfoGroupProps = {
@@ -8,10 +8,11 @@ type InfoGroupProps = {
 
 export const InfoGroup = (props: InfoGroupProps) => {
 	const { title, value } = props;
+
 	return (
-		<Box>
+		<VStack space="4px">
 			<Text.Heading>{value.toString()}</Text.Heading>
 			<Text.Body>{title}</Text.Body>
-		</Box>
+		</VStack>
 	);
 };
