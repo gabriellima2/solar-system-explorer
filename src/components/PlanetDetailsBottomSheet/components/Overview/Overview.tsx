@@ -2,12 +2,14 @@ import { ActivityIndicator } from "react-native";
 import { Box, Flex } from "native-base";
 
 import { usePlanetDetailsContext } from "@contexts/planet-details-context";
-import { useOverviewQuery } from "../hooks/useOverviewQuery";
+import { useOverviewQuery } from "../../hooks/useOverviewQuery";
 
 import { PlanetName } from "@components/PlanetName";
 import { Error } from "@components/Error";
+import { InfoGroup } from "../InfoGroup";
 import { Text } from "@components/Text";
-import { InfoGroup } from "./InfoGroup";
+
+import { DEFAULT_ERROR } from "../../constants/default-error";
 
 export const Overview = () => {
 	const { planetID } = usePlanetDetailsContext();
@@ -15,7 +17,7 @@ export const Overview = () => {
 
 	if (isLoading) return <ActivityIndicator />;
 
-	if (isError) return <Error message={error || "Verifique sua conexão"} />;
+	if (isError) return <Error message={error || DEFAULT_ERROR} />;
 
 	if (!planet) return null;
 

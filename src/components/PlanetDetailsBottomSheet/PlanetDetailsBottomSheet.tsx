@@ -4,8 +4,7 @@ import { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 import { usePlanetDetailsContext } from "@contexts/planet-details-context";
 
 import { BottomSheet } from "@components/BottomSheet";
-import { Images } from "./components/Images";
-import { Overview } from "./components";
+import { Overview, Images } from "./components";
 
 import { getDefaultSpacing } from "@utils/get-default-spacing";
 

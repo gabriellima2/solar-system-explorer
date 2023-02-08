@@ -16,7 +16,7 @@ export function useOverviewQuery(id: string): UseOverviewQueryReturn {
 	const { data, error, isError, isLoading } = useQuery(
 		["overview", id],
 		() => planetDetailsServices.getOverview(id),
-		{ refetchOnWindowFocus: false }
+		{ refetchOnWindowFocus: false, refetchOnMount: false }
 	);
 
 	const staticPlanetInfo = planetFinder("name_english", id);

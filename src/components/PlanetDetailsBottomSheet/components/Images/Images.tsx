@@ -4,11 +4,12 @@ import { BottomSheetFlatList } from "@gorhom/bottom-sheet";
 import { Box, Image } from "native-base";
 
 import { usePlanetDetailsContext } from "@contexts/planet-details-context";
-import { useImagesQuery } from "../hooks/useImagesQuery";
+import { useImagesQuery } from "../../hooks/useImagesQuery";
 
 import { Error } from "@components/Error";
 import { Text } from "@components/Text";
 
+import { DEFAULT_ERROR } from "../../constants/default-error";
 import type { IPlanetImageItem } from "@interfaces/IPlanetImageItem";
 
 export const Images = () => {
@@ -31,7 +32,7 @@ export const Images = () => {
 
 	if (isLoading) return <ActivityIndicator />;
 
-	if (isError) return <Error message={error || "Verifique sua conexão"} />;
+	if (isError) return <Error message={error || DEFAULT_ERROR} />;
 
 	if (!images) return null;
 
