@@ -26,7 +26,7 @@ Nos favoritos, utilizei o [Redux](https://react-redux.js.org/) fazendo uma integ
 - [Expo](https://expo.dev/)
 - [Typescript](https://www.typescriptlang.org/)
 - [React Navigation](https://reactnavigation.org/)
-- [React Query](https://react-query-v2.tanstack.com/)
+- [React Query](https://react-query-v3.tanstack.com/)
 - [Native Base](https://nativebase.io/)
 - [React Native Bottom Sheet](https://gorhom.github.io/react-native-bottom-sheet/)
 - [Async Storage](https://react-native-async-storage.github.io/async-storage/docs/usage/)
