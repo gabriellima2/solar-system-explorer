@@ -21,7 +21,9 @@ export const NavigationList = <Item extends {}>(
 		({ item, index }: ListRenderItemInfo<Item>) => (
 			<Navigation
 				{...item}
-				onPress={() => navigateToIndex(index)}
+				onPress={() => {
+					if (currentItemIndex !== index) return navigateToIndex(index);
+				}}
 				accessibilityHint={`Navega até o item ${index + 1}`}
 				isActive={currentItemIndex === index}
 				accessibilityValue={{
