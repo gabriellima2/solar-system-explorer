@@ -1,6 +1,8 @@
 import { useRef, useState, type MutableRefObject } from "react";
 import { type ViewToken, FlatList } from "react-native";
 
+import { usePlanetDetailsContext } from "@contexts/planet-details-context";
+
 type handleViewableChangeParams = {
 	changed: ViewToken[];
 };
@@ -18,12 +20,16 @@ export function useCarousel<
 	CarouselItem extends {}
 >(): UseCarouselParams<CarouselItem> {
 	const [currentIndex, setCurrentIndex] = useState(0);
+	const { bottomSheetRef, handleClose } = usePlanetDetailsContext();
 	const flatListRef = useRef<FlatList<CarouselItem> | null>(null);
 
 	const handleViewableChange = useRef(
 		({ changed }: handleViewableChangeParams) => {
 			if (!changed[0].isViewable) return;
 			setCurrentIndex(changed[0].index as number);
+
+			if (!bottomSheetRef.current) return;
+			handleClose();
 		}
 	);
 

@@ -13,16 +13,16 @@ export const BottomSheet = forwardRef<BottomSheetLib, BottomSheetProps>(
 	(props, ref) => {
 		const { snapPoints } = props;
 
-		const defaultSnapPoints = useMemo(() => [1, "50%"], []);
+		const defaultSnapPoints = useMemo(() => [1, "60%"], []);
 		const { colors } = useTheme();
 
 		return (
 			<BottomSheetLib
 				{...props}
 				ref={ref}
-				index={1}
+				index={0}
 				enablePanDownToClose
-				backgroundStyle={{ backgroundColor: `${colors.dark[800]}E6` }}
+				backgroundStyle={{ backgroundColor: `${colors.dark[800]}F2` }}
 				style={{ paddingVertical: 8 }}
 				handleIndicatorStyle={{
 					backgroundColor: colors.dark[600],

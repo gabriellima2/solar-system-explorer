@@ -55,6 +55,7 @@ export const Images = () => {
 				onEndReached={loadMoreImages}
 				onEndReachedThreshold={0.4}
 				ListFooterComponent={isLoading ? <ActivityIndicator /> : null}
+				initialNumToRender={10}
 			/>
 		</VStack>
 	);
