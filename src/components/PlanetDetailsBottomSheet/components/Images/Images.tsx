@@ -1,13 +1,14 @@
 import { useCallback } from "react";
 import { ListRenderItemInfo, ActivityIndicator } from "react-native";
 import { BottomSheetFlatList } from "@gorhom/bottom-sheet";
-import { Box, Image } from "native-base";
+import { Image, VStack } from "native-base";
 
 import { usePlanetDetailsContext } from "@contexts/planet-details-context";
 import { useImagesQuery } from "../../hooks/useImagesQuery";
 
 import { Error } from "@components/Error";
 import { Text } from "@components/Text";
+import { Loading } from "./Loading";
 
 import { DEFAULT_ERROR } from "../../constants/default-error";
 import type { IPlanetImageItem } from "@interfaces/IPlanetImageItem";
@@ -24,20 +25,27 @@ export const Images = () => {
 	);
 
 	const renderItem = useCallback(
-		({ item }: ListRenderItemInfo<IPlanetImageItem>) => (
-			<Image source={{ uri: item.links[0].href }} alt="" size="xl" />
+		({ item, index }: ListRenderItemInfo<IPlanetImageItem>) => (
+			<Image
+				source={{ uri: item.links[0].href }}
+				alt={`Image do ${index}`}
+				w="32"
+				h="32"
+				mr="12px"
+				rounded="md"
+			/>
 		),
 		[]
 	);
 
-	if (isLoading) return <ActivityIndicator />;
+	if (isLoading) return <Loading />;
 
 	if (isError) return <Error message={error || DEFAULT_ERROR} />;
 
 	if (!images) return null;
 
 	return (
-		<Box>
+		<VStack space="12px">
 			<Text.Heading>Imagens</Text.Heading>
 			<BottomSheetFlatList<IPlanetImageItem>
 				data={images.collection.items}
@@ -48,6 +56,6 @@ export const Images = () => {
 				onEndReachedThreshold={0.4}
 				ListFooterComponent={isLoading ? <ActivityIndicator /> : null}
 			/>
-		</Box>
+		</VStack>
 	);
 };
