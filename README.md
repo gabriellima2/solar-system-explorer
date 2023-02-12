@@ -5,7 +5,7 @@
 </h1>
 
 <div align="center">
-  <img src="./public/docs/figma.png" alt="demonstração do projeto" >
+  <img src="./public/docs/figma.JPG" alt="demonstração do projeto" >
 </div>
 
 # Rodando o projeto
