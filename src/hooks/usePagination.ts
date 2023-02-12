@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type UsePaginationReturn = {
 	currentPage: number;
@@ -14,6 +14,10 @@ export function usePagination(): UsePaginationReturn {
 
 	const decrementCurrentPage = () =>
 		setCurrentPage((prevState) => (prevState -= 1));
+
+	useEffect(() => {
+		return () => setCurrentPage(0);
+	}, []);
 
 	return {
 		currentPage,
