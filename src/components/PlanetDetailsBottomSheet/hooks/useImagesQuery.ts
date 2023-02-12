@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useQuery } from "react-query";
 
 import { usePagination } from "@hooks/usePagination";
@@ -13,7 +14,8 @@ type UseImagesQueryReturn = QueryDefaultReturn & {
 };
 
 export function useImagesQuery(id: string): UseImagesQueryReturn {
-	const { currentPage, incrementCurrentPage } = usePagination();
+	const { currentPage, incrementCurrentPage, resetCurrentPage } =
+		usePagination();
 	const { data, error, isError, isLoading } =
 		useQuery<IPlanetDetailsImagesResponse>(
 			["images", currentPage, id],
@@ -24,6 +26,10 @@ export function useImagesQuery(id: string): UseImagesQueryReturn {
 				refetchOnMount: false,
 			}
 		);
+
+	useEffect(() => {
+		resetCurrentPage();
+	}, [id]);
 
 	return {
 		images: data,
