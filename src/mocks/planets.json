@@ -2,49 +2,49 @@
 	{
 		"name_english": "mercury",
 		"name_portuguese": "mercúrio",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+		"description": "Mercúrio é o menor planeta do nosso sistema solar e mais próximo do Sol, é apenas um pouco maior que a Lua da Terra. (Fonte: Nasa)",
 		"image_url": "https://raw.githubusercontent.com/gabriellima2/solar-system-explorer/dev/public/planets/mercury.png"
 	},
 	{
 		"name_english": "venus",
 		"name_portuguese": "vênus",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+		"description": "Vênus é o segundo planeta a partir do Sol e o planeta mais quente do sistema solar. Vizinho planetário mais próximo da Terra. Um dos quatro planetas internos, terrestres (ou rochosos). (Fonte: Nasa)",
 		"image_url": "https://raw.githubusercontent.com/gabriellima2/solar-system-explorer/dev/public/planets/venus.png"
 	},
 	{
 		"name_english": "earth",
 		"name_portuguese": "terra",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+		"description": "Terra é o terceiro planeta a partir do Sol, e o único lugar que conhecemos até o momento que possui vida. Apenas o quinto maior planeta do sistema solar, mas é o maior dos quatro planetas mais próximos do Sol. (Fonte: Nasa)",
 		"image_url": "https://raw.githubusercontent.com/gabriellima2/solar-system-explorer/dev/public/planets/earth.png"
 	},
 	{
 		"name_english": "mars",
 		"name_portuguese": "marte",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+		"description": "Marte é o quarto planeta a partir do Sol. Possui uma atmosfera muito fina e uma superfície empoeirada, fria e desértica. Também é um planeta com estações, calotas polares, cânions e vulcões extintos. (Fonte: Nasa)",
 		"image_url": "https://raw.githubusercontent.com/gabriellima2/solar-system-explorer/dev/public/planets/mars.png"
 	},
 	{
 		"name_english": "jupiter",
 		"name_portuguese": "júpiter",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+		"description": "Júpiter é o quinto planeta a partir do Sol e o maior planeta do sistema solar. As listras e redemoinhos de Júpiter são nuvens frias e ventosas de amônia e água. A Grande Mancha Vermelha de Júpiter é uma tempestade gigante que se alastrou por centenas de anos. (Fonte: Nasa)",
 		"image_url": "https://raw.githubusercontent.com/gabriellima2/solar-system-explorer/dev/public/planets/jupiter.png"
 	},
 	{
 		"name_english": "saturn",
 		"name_portuguese": "saturno",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+		"description": "Saturno é o sexto planeta a partir do Sol e o segundo maior planeta do sistema solar. É rodeado com milhares de anéis feitos de pedaços de gelo e rocha. (Fonte: Nasa)",
 		"image_url": "https://raw.githubusercontent.com/gabriellima2/solar-system-explorer/dev/public/planets/saturn.png"
 	},
 	{
 		"name_english": "uranus",
 		"name_portuguese": "urano",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+		"description": "Urano é o sétimo planeta a partir do Sol e o terceiro maior planeta do sistema solar. Foi o primeiro planeta encontrado com a ajuda de um telescópio, sendo descoberto em 1781 pelo astrônomo William Herschel. (Fonte: Nasa)",
 		"image_url": "https://raw.githubusercontent.com/gabriellima2/solar-system-explorer/dev/public/planets/uranus.png"
 	},
 	{
 		"name_english": "neptune",
 		"name_portuguese": "netuno",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+		"description": "O gigante de gelo Netuno é o oitavo e mais distante planeta do nosso sistema solar. É o único planeta do nosso sistema solar não visível a olho nu. Em 2011, Netuno completou sua primeira órbita de 165 anos desde sua descoberta em 1846. (Fonte: Nasa)",
 		"image_url": "https://raw.githubusercontent.com/gabriellima2/solar-system-explorer/dev/public/planets/neptune.png"
 	}
 ]
