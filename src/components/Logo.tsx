@@ -4,7 +4,8 @@ export const Logo = () => (
 	<Image
 		source={require("../../assets/logo.png")}
 		alt="Logo do App"
-		size={{ base: "180px", md: "200px" }}
+		w={{ base: "180px", md: "200px" }}
+		h={{ base: "60px", md: "65px" }}
 		resizeMode="contain"
 		ml={{ base: "-4px", md: "0" }}
 	/>
